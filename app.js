@@ -6,8 +6,8 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const connectDB = require('./db/connect');
 
-// const authRouter = require('./routes/authRoutes');
-// const userRouter = require('./routes/userRoutes');
+const authRouter = require('./routes/authRoutes');
+const userRouter = require('./routes/userRoutes');
 // const productRouter = require('./routes/productRoutes');
 // const reviewRouter = require('./routes/reviewRoutes');
 // const orderRouter = require('./routes/orderRoute');
@@ -26,8 +26,8 @@ app.get('/', (req, res) => {
     console.log(req.signedCookies);
     res.send('e commerce api');
 });
-// app.use('/auth', authRouter);
-// app.use('/users', userRouter);
+app.use('/auth', authRouter);
+app.use('/users', userRouter);
 // app.use('/products', productRouter);
 // app.use('/reviews', reviewRouter);
 // app.use('/orders', orderRouter);
