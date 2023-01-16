@@ -10,7 +10,7 @@ const authRouter = require('./routes/authRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
-// const orderRouter = require('./routes/orderRoute');
+const orderRouter = require('./routes/orderRoute');
 
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -30,7 +30,7 @@ app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/products', productRouter);
 app.use('/reviews', reviewRouter);
-// app.use('/orders', orderRouter);
+app.use('/orders', orderRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
